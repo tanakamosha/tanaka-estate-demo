@@ -3,7 +3,7 @@ import { Building, MapPin, Phone, Mail, ArrowRight, Home, CheckCircle } from 'lu
 
 export default function RealEstatePage() {
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       {/* ヘッダー */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -16,17 +16,17 @@ export default function RealEstatePage() {
             <a href="#about" className="hover:text-blue-700 transition">私たちについて</a>
             <a href="#access" className="hover:text-blue-700 transition">アクセス</a>
           </nav>
-          <a href="#contact" className="bg-blue-700 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-800 transition shadow-md">
+          <button className="bg-blue-700 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-800 transition shadow-md">
             お問い合わせ
-          </a>
+          </button>
         </div>
       </header>
 
       {/* メインビジュアル */}
-      <section className="relative h-[500px] flex items-center justify-center bg-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10"></div>
-        {/* 背景画像エリア（色は仮） */}
-        <div className="absolute inset-0 bg-slate-800 opacity-50"></div>
+      <section className="relative h-[500px] flex items-center justify-center bg-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40 z-10"></div>
+        {/* 家の画像の代わりに色背景を使用（画像URLがあれば差し替え可能） */}
+        <div className="absolute inset-0 bg-slate-800"></div>
         
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -79,9 +79,9 @@ export default function RealEstatePage() {
               <span className="text-blue-700 font-bold tracking-wider uppercase text-sm">Featured</span>
               <h3 className="text-3xl font-bold mt-2 text-slate-900">おすすめ物件</h3>
             </div>
-            <div className="hidden md:flex items-center text-blue-700 font-bold hover:underline">
+            <button className="hidden md:flex items-center text-blue-700 font-bold hover:underline">
               すべての物件を見る <ArrowRight className="ml-1 h-4 w-4" />
-            </div>
+            </button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -91,8 +91,8 @@ export default function RealEstatePage() {
               { price: "5,100万円", layout: "4LDK / 98.2㎡", name: "パークサイドテラス", tag: "南向き" },
             ].map((house, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                <div className="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center">
-                  <Home className="h-12 w-12 text-gray-400" />
+                <div className="h-48 bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400">
+                  <Home className="h-12 w-12" />
                   <span className="absolute top-4 left-4 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                     {house.tag}
                   </span>
